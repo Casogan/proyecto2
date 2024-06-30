@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfil de Maritza</title>
+<style>
+  body {
+    background-color: #333;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #444;
+  }
+  .logo {
+    width: 80px;
+    margin-right: 20px;
+  }
+  .logo img {
+    width: 100%;
+    border-radius: 50%;
+  }
+  .profile-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .profile-info {
+    flex: 1;
+  }
+  .profile-info h1 {
+    font-size: 36px;
+    color: #00ff00;
+    margin: 0;
+  }
+  .profile-info p {
+    font-size: 18px;
+  }
+  .charts {
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .chart-container {
+    width: 45%;
+    margin-bottom: 20px;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .chart-container canvas {
+    width: 100%;
+    height: 300px;
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <img src="https://www.greatplacetowork.com.pe/images/certification/2021/tai-loy/logo-02.jpg" alt="Tai Loy Logo">
+    </div>
+    <div class="profile-info">
+      <h1>Milagros Martinez Martinez Litano</h1>
+      <p>Departamento: Ventas</p>
+      <p>Posición: limpieza</p>
+      <p>Sueldo: S/ 5000</p>
+      <p>Asistencias: 95%</p>
+      <p>Puntualidad: 98%</p>
+    </div>
+    <img class="profile-image" src="2234.jpg" alt="Milagros Martinez Martinez Litano">
+  </div>
+
+  <div class="charts">
+    <div class="chart-container">
+      <canvas id="ventasChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <canvas id="sueldoChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <canvas id="asistenciasChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <canvas id="puntualidadChart"></canvas>
+    </div>
+  </div>
+
+  <script>
+    const animationOptions = {
+      duration: 3000,
+      easing: 'easeInOutQuad'
+    };
+
+    const ventasData = {
+      labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+      datasets: [{
+        label: 'Ventas',
+        data: [1200, 1500, 1300, 1700, 1600, 1800],
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1,
+        fill: false
+      }]
+    };
+
+    const sueldoData = {
+      labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
+      datasets: [{
+        label: 'Sueldo',
+        data: [5000, 5000, 5000, 5000, 5000, 5000],
+        backgroundColor: 'rgba(153, 102, 255, 0.6)',
+        borderColor: 'rgba(153, 102, 255, 1)',
+        borderWidth: 1
+      }]
+    };
+
+    const asistenciasData = {
+      labels: ['Asistencias', 'Inasistencias'],
+      datasets: [{
+        label: 'Asistencias',
+        data: [95, 5],
+        backgroundColor: ['rgba(255, 206, 86, 0.6)', 'rgba(255, 99, 132, 0.6)'],
+        borderColor: ['rgba(255, 206, 86, 1)', 'rgba(255, 99, 132, 1)'],
+        borderWidth: 1
+      }]
+    };
+
+    const puntualidadData = {
+      labels: ['Puntual', 'Tardanzas'],
+      datasets: [{
+        label: 'Puntualidad',
+        data: [98, 2],
+        backgroundColor: ['rgba(54, 162, 235, 0.6)', 'rgba(255, 159, 64, 0.6)'],
+        borderColor: ['rgba(54, 162, 235, 1)', 'rgba(255, 159, 64, 1)'],
+        borderWidth: 1
+      }]
+    };
+
+    const ventasCtx = document.getElementById('ventasChart').getContext('2d');
+    const ventasChart = new Chart(ventasCtx, {
+      type: 'line',
+      data: ventasData,
+      options: {
+        responsive: true,
+        animation: animationOptions,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    const sueldoCtx = document.getElementById('sueldoChart').getContext('2d');
+    const sueldoChart = new Chart(sueldoCtx, {
+      type: 'bar',
+      data: sueldoData,
+      options: {
+        responsive: true,
+        animation: animationOptions,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    const asistenciasCtx = document.getElementById('asistenciasChart').getContext('2d');
+    const asistenciasChart = new Chart(asistenciasCtx, {
+      type: 'pie',
+      data: asistenciasData,
+      options: {
+        responsive: true,
+        animation: animationOptions
+      }
+    });
+
+    const puntualidadCtx = document.getElementById('puntualidadChart').getContext('2d');
+    const puntualidadChart = new Chart(puntualidadCtx, {
+      type: 'doughnut',
+      data: puntualidadData,
+      options: {
+        responsive: true,
+        animation: animationOptions
+      }
+    });
+
+    function updateChart(chart, newData) {
+      chart.data.datasets[0].data = newData;
+      chart.update();
+    }
+
+    function animateCharts() {
+      setInterval(() => {
+        const ventasNewData = ventasData.datasets[0].data.map(value => value * (0.8 + Math.random() * 0.4));
+        const sueldoNewData = sueldoData.datasets[0].data.map(value => value * (0.8 + Math.random() * 0.4));
+        const asistenciasNewData = [
+          asistenciasData.datasets[0].data[0] * (0.8 + Math.random() * 0.4),
+          100 - asistenciasData.datasets[0].data[0] * (0.8 + Math.random() * 0.4)
+        ];
+        const puntualidadNewData = [
+          puntualidadData.datasets[0].data[0] * (0.8 + Math.random() * 0.4),
+          100 - puntualidadData.datasets[0].data[0] * (0.8 + Math.random() * 0.4)
+        ];
+
+        updateChart(ventasChart, ventasNewData);
+        updateChart(sueldoChart, sueldoNewData);
+        updateChart(asistenciasChart, asistenciasNewData);
+        updateChart(puntualidadChart, puntualidadNewData);
+      }, 3000);
+    }
+
+    animateCharts();
+  </script>
+</body>
+</html>

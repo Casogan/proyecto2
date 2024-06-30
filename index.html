@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bienvenido a Tayloy</title>
+<style>
+  body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  .background-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  .background-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+  }
+  .logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 100px; /* Ajusta el tamaño del logo según tus necesidades */
+    z-index: 1;
+  }
+  .welcome-text {
+    font-size: 36px;
+    margin-top: 20px;
+    z-index: 1;
+  }
+  .name-input {
+    margin-top: 50px;
+    font-size: 24px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .name-input label {
+    font-size: 20px;
+    color: #ff7f50;
+    margin-bottom: 5px;
+  }
+  .name-input input[type="text"],
+  .name-input input[type="password"] {
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ff7f50;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #333;
+    color: black; /* Cambiado a color negro */
+    outline: none;
+  }
+  .name-input input[type="text"]:focus,
+  .name-input input[type="password"]:focus {
+    border-color: #ff7f50;
+  }
+  .name-input button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .name-input button:hover {
+    background-color: #ff6347;
+  }
+  .footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    z-index: 1;
+  }
+  .error-message {
+    color: rgb(181, 245, 5);
+    font-size: 14px;
+    margin-top: 14px;
+  }
+</style>
+<script>
+function validarFormulario(event) {
+  event.preventDefault(); // Evita que se envíe el formulario automáticamente
+  
+  var nombre = document.getElementById('nombre').value;
+  var contrasena = document.getElementById('contrasena').value;
+
+  if (nombre === '123' && contrasena === '123') {
+    // Redirecciona a la segunda página
+    window.location.href = 'pagina2.html';
+  } else {
+    document.getElementById('error').innerText = 'Nombre o contraseña incorrecta. Inténtalo de nuevo.';
+  }
+}
+</script>
+</head>
+<body>
+  <div class="background-grid">
+    <img src="https://media.gq.com.mx/photos/5f44373eef6115112e88bbee/master/pass/animes%20gore%20another.jpg" alt="Image 1">
+    <img src="https://img.freepik.com/foto-gratis/arreglo-coleccion-estacionaria-moderna_23-2149309642.jpg" alt="Image 2">
+    <img src="https://gestion.pe/resizer/v2/TYV6NMK325GUVLWEIDAZONSOFY.jpg?auth=b52cf117845b3e8edc6d3d1b88e287534fe83b290172ad9be8019606b58a9103&width=620&quality=75&smart=true" alt="Image 3">
+    <img src="https://rumah.com.pe/cdn/shop/files/freidora_1200x.png?v=1669413416" alt="Image 4">
+    <img src="https://rumah.com.pe/cdn/shop/products/post-escurridor-negro1nivel_1200x.png?v=1671844312" alt="Image 5">
+    <img src="https://i.pinimg.com/564x/d1/86/5d/d1865dec87b228d4b1b141f62bbe9d11.jpg" alt="Image 6">
+    <img src="https://i.pinimg.com/564x/ba/2b/2a/ba2b2ad1ff3a0d87f47f0772c5e53ce1.jpg" alt="Image 7">
+    <img src="https://i.pinimg.com/564x/03/c3/34/03c334d467c4bd47cfdc7b03442fd3a5.jpg" alt="Image 8">
+    <img src="https://i.pinimg.com/564x/a4/24/11/a42411beeadf4875eee2d24686bfdaff.jpg" alt="Image 9">
+    <img src="https://i.pinimg.com/564x/73/e3/ff/73e3ff49ca4f2fa70c2550401548524e.jpg" alt="Image 10">
+    <img src="https://i.pinimg.com/564x/51/ff/65/51ff65f82276a192f224aa566e7ca2ce.jpg" alt="Image 11">
+    <img src="https://i.pinimg.com/564x/3a/0a/cd/3a0acd7d00087499bda3281c7bbd5292.jpg" alt="Image 12">
+    <img src="https://i.pinimg.com/564x/5c/5f/29/5c5f2921355f512ba10a996effda1207.jpg" alt="Image 13">
+    <img src="https://i.pinimg.com/564x/5e/18/f2/5e18f2f77be02225d6ad660e4ded8b1e.jpg" alt="Image 14">
+    <img src="https://i.pinimg.com/564x/bc/42/82/bc42823295c0b7ae059f8c8ea33ec121.jpg" alt="Image 15">
+    <img src="https://i.pinimg.com/564x/98/a9/c7/98a9c7819988e46d5b25b20ac8387ec8.jpg" alt="Image 16">
+    <img src="https://i.pinimg.com/564x/66/93/ab/6693abad9ee0963605bdb2c15be5e6b8.jpg" alt="Image 17">
+    <img src="https://i.pinimg.com/564x/1e/c6/12/1ec612652fae647867f1f39bcd250952.jpg" alt="Image 18">
+    <img src="https://i.pinimg.com/564x/2f/b0/0e/2fb00e94937f36f016cd3a055302a445.jpg" alt="Image 19">
+    <img src="https://i.pinimg.com/564x/18/e3/27/18e327d1bf800eed9bf493821a0633b2.jpg" alt="Image 20">
+    <img src="https://i.pinimg.com/564x/77/a9/14/77a914cfd13c96325e72b52034c11b0a.jpg" alt="Image 21">
+    <img src="https://i.pinimg.com/564x/95/d9/63/95d9636f0c21cb526fe4913c3faa69d9.jpg" alt="Image 22">
+  </div>
+
+  <div class="logo">
+    <img src="https://www.greatplacetowork.com.pe/images/certification/2021/tai-loy/logo-02.jpg" alt="Tai Loy Logo" style="width: 80px;">
+  </div>
+
+  <div class="welcome-text">
+    <h1>¡BIENVENIDO A <span style="color: #05ff44;">TAYLOY</span>!</h1>
+    <p>Descubre un mundo de innovación y tecnología.</p>
+  </div>
+  
+  <div class="name-input">
+    <form onsubmit="validarFormulario(event)">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+      <br>
+      <label for="contrasena">Contraseña:</label>
+      <input type="password" id="contrasena" name="contrasena" required>
+      <br>
+      <span id="error" class="error-message"></span>
+      <br>
+      <button type="submit">Ingresar</button>
+    </form>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2024 Tayloy. Todos los derechos reservados.</p>
+  </div>
+
+</body>
+</html>

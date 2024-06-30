@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grupo de la Mañana - Bienvenido</title>
+<style>
+  body {
+    background-color: #016109;
+    color: rgb(207, 180, 180);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  .welcome {
+    padding: 20px;
+  }
+  .welcome h1 {
+    font-size: 36px;
+    color: #000000; /* Color verde para el título */
+  }
+  .profiles {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .profile {
+    background-color: #000000;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    cursor: pointer; /* Cambia el cursor a mano al pasar por encima */
+    transition: transform 0.3s ease; /* Agrega una transición suave */
+  }
+  .profile img:hover {
+    transform: scale(1.1); /* Efecto de escala al pasar el ratón */
+  }
+  .profile p {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  .time-info {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .attendance {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  .attendance label {
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  .attendance input[type="radio"] {
+    display: none; /* Ocultar los radios nativos */
+  }
+  .attendance input[type="radio"] + span {
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .attendance input[type="radio"]:checked + span {
+    background-color: #007bff; /* Color azul cuando está seleccionado */
+  }
+  .logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 80px;
+    z-index: 1;
+  }
+  .logo img {
+    width: 100%;
+    border-radius: 50%; /* Hace que el logo también sea circular */
+  }
+  .footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #999999;
+  }
+</style>
+</head>
+<body>
+  <div class="logo">
+    <img src="https://www.greatplacetowork.com.pe/images/certification/2021/tai-loy/logo-02.jpg" alt="Tai Loy Logo">
+  </div>
+
+  <div class="welcome">
+    <h1>BIENVENIDO GRUPO DE LA MAÑANA</h1>
+    
+    <div class="profiles">
+      <!-- Perfil 1: Maritza Prado Quiñones -->
+      <div class="profile">
+        <a href="maritza.html">
+          <img src="WhatsApp Image 2024-06-29 at 5.16.54 PM.jpeg" alt="Maritza Prado Quiñones">
+        </a>
+        <p style="color: #ff7f50;">Maritza Prado Quiñones</p>
+        <div class="time-info">
+          <p>Hora de entrada:</p>
+          <select name="maritza_horario">
+            <option value="08:00">08:00</option>
+            <option value="08:30">08:30</option>
+            <option value="09:00">09:00</option>
+            <!-- Añade más opciones según sea necesario -->
+          </select>
+          <p>Hora de salida: 14:00</p>
+        </div>
+        <div class="attendance">
+          Asistencia:
+          <label>
+            <input type="radio" name="maritza_asistencia" value="si"> <span>Sí</span>
+          </label>
+          <label>
+            <input type="radio" name="maritza_asistencia" value="no"> <span>No</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Perfil 2: Milagros Martinez Martinez Litano -->
+      <div class="profile">
+        <a href="milagros.html">
+          <img src="2234.jpg" alt="Milagros Martinez Martinez Litano">
+        </a>
+        <p style="color: #00ff00;">Milagros Martinez Martinez Litano</p>
+        <div class="time-info">
+          <p>Hora de entrada:</p>
+          <select name="milagros_horario">
+            <option value="08:00">08:00</option>
+            <option value="08:30">08:30</option>
+            <option value="09:00">09:00</option>
+            <!-- Añade más opciones según sea necesario -->
+          </select>
+          <p>Hora de salida: 14:00</p>
+        </div>
+        <div class="attendance">
+          Asistencia:
+          <label>
+            <input type="radio" name="milagros_asistencia" value="si"> <span>Sí</span>
+          </label>
+          <label>
+            <input type="radio" name="milagros_asistencia" value="no"> <span>No</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Perfil 3: Jennifer Rojas Aguirre Rojas -->
+      <div class="profile">
+        <a href="jennifer.html">
+          <img src="https://media.vogue.mx/photos/64b575cdbef1e918167bf00e/master/pass/grupo-femeninos-k-pop-tercera-generacion.jpg" alt="Jennifer Rojas Aguirre Rojas">
+        </a>
+        <p style="color: #ff0000;">Jennifer Rojas Aguirre Rojas</p>
+        <div class="time-info">
+          <p>Hora de entrada:</p>
+          <select name="jennifer_horario">
+            <option value="08:00">08:00</option>
+            <option value="08:30">08:30</option>
+            <option value="09:00">09:00</option>
+            <!-- Añade más opciones según sea necesario -->
+          </select>
+          <p>Hora de salida: 14:00</p>
+        </div>
+        <div class="attendance">
+          Asistencia:
+          <label>
+            <input type="radio" name="jennifer_asistencia" value="si"> <span>Sí</span>
+          </label>
+          <label>
+            <input type="radio" name="jennifer_asistencia" value="no"> <span>No</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Perfil 4: Mario Salinas Salinas Aquino -->
+      <div class="profile">
+        <a href="mario.html">
+          <img src="https://www.mundodeportivo.com/alfabeta/hero/2020/09/mario.jpg?width=768&aspect_ratio=16:9&format=nowebp" alt="Mario Salinas Salinas Aquino">
+        </a>
+        <p style="color: #ffff00;">Mario Salinas Salinas Aquino</p>
+        <div class="time-info">
+          <p>Hora de entrada:</p>
+          <select name="mario_horario">
+            <option value="08:00">08:00</option>
+            <option value="08:30">08:30</option>
+            <option value="09:00">09:00</option>
+            <!-- Añade más opciones según sea necesario -->
+          </select>
+          <p>Hora de salida: 14:00</p>
+        </div>
+        <div class="attendance">
+          Asistencia:
+          <label>
+            <input type="radio" name="mario_asistencia" value="si"> <span>Sí</span>
+          </label>
+          <label>
+            <input type="radio" name="mario_asistencia" value="no"> <span>No</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Perfil 5: Cristian Caso Caso Zavaleta -->
+      <div class="profile">
+        <a href="cristian.html">
+          <img src="https://i.pinimg.com/564x/ed/b4/fc/edb4fc52c00802a6ff2bd93703602303.jpg" alt="Cristian Caso Caso Zavaleta">
+        </a>
+        <p style="color: #00ffff;">Cristian Caso Caso Zavaleta</p>
+        <div class="time-info">
+          <p>Hora de entrada:</p>
+          <select name="cristian_horario">
+            <option value="08:00">08:00</option>
+            <option value="08:30">08:30</option>
+            <option value="09:00">09:00</option>
+            <!-- Añade más opciones según sea necesario -->
+          </select>
+          <p>Hora de salida: 14:00</p>
+        </div>
+        <div class="attendance">
+          Asistencia:
+          <label>
+            <input type="radio" name="cristian_asistencia" value="si"> <span>Sí</span>
+          </label>
+          <label>
+            <input type="radio" name="cristian_asistencia" value="no"> <span>No</span>
+          </label>
+        </div>
+      </div>
+    </div>milagros.html
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2024 Tai Loy. Todos los derechos reservados.</p>
+  </div>
+</body>
+</html>
